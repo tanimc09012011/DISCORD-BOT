@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TANIM ER WIFE · TYRONEX PRODUCTION</title>
+<link rel="icon" href="https://i.postimg.cc/vBhXVpGJ/Gemini-Generated-Image-ujmtu4ujmtu4ujmt-(1).jpg">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07060f;--panel:#0f0d1c;--panel2:#171430;--line:#2c2650;--text:#ebe9ff;--mute:#8f8abb;--cyan:#19e6ff;--purple:#9b3dff;--red:#ff4d7a}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{background:radial-gradient(900px 500px at 90% -10%,rgba(155,61,255,.22),transparent),radial-gradient(800px 500px at -10% 110%,rgba(25,230,255,.13),transparent),var(--bg);color:var(--text);font-family:'Rajdhani',system-ui,sans-serif;font-size:16px;display:flex;flex-direction:column;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.hidden{display:none!important}
+header{display:flex;align-items:center;gap:14px;padding:10px 18px;border-bottom:1px solid var(--line);background:rgba(15,13,28,.9)}
+header img{width:44px;height:44px;border-radius:12px;border:2px solid var(--cyan);box-shadow:0 0 16px rgba(25,230,255,.55);object-fit:cover}
+.brand{font-family:Orbitron,sans-serif;font-weight:800;font-size:18px;letter-spacing:.04em;background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.15}
+.sub{font-size:13px;color:var(--mute)}
+.spacer{flex:1}
+.who{font-size:14px;color:var(--mute)}
+.btn{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 14px;font-weight:600;transition:border-color .15s,box-shadow .15s}
+.btn:hover{border-color:var(--cyan);box-shadow:0 0 10px rgba(25,230,255,.3)}
+.btn.primary{background:linear-gradient(90deg,var(--cyan),var(--purple));border:0;color:#07060f;font-weight:700}
+.btn.danger:hover{border-color:var(--red);box-shadow:0 0 10px rgba(255,77,122,.3)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+select,input[type=text],input[type=email],input[type=password],textarea{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;width:100%}
+input:focus,select:focus,textarea:focus{border-color:var(--cyan);outline:none;box-shadow:0 0 8px rgba(25,230,255,.3)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.grow{flex:1;min-width:160px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.empty{margin:auto;color:var(--mute);text-align:center;max-width:340px;padding:20px}
+.tag{font-size:13px;color:var(--mute)}
+.screen{flex:1;min-height:0;overflow:auto;padding:20px}
+.screen h2{margin:0 0 4px;font-size:22px}
+/* server grid */
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-top:16px}
+.gcard{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 12px;background:var(--panel);border:1px solid var(--line);border-radius:14px;text-align:center;transition:border-color .15s,box-shadow .15s}
+.gcard:hover{border-color:var(--cyan);box-shadow:0 0 18px rgba(25,230,255,.35)}
+.gicon{width:72px;height:72px;border-radius:50%;border:2px solid var(--purple);background:var(--panel2) center/cover;display:grid;place-items:center;font-family:Orbitron,sans-serif;font-weight:800;font-size:20px}
+.gname{font-weight:700;word-break:break-word}
+/* panel */
+#panel{display:flex;flex-direction:column;flex:1;min-height:0}
+.sbar{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line)}
+.sbar .gicon{width:36px;height:36px;font-size:12px}
+.sbar h2{margin:0;font-size:20px}
+nav{display:flex;gap:4px;overflow-x:auto;padding:0 10px;border-bottom:1px solid var(--line)}
+nav button{background:none;border:0;border-bottom:3px solid transparent;padding:11px 16px;color:var(--mute);font-weight:600;white-space:nowrap}
+nav button.active{color:var(--cyan);border-color:var(--cyan);text-shadow:0 0 10px rgba(25,230,255,.6)}
+.tab{flex:1;min-height:0;display:none;padding:14px 16px;overflow:auto}
+.tab.active{display:flex;flex-direction:column}
+/* chat */
+#msgs{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:4px;min-height:180px;padding:4px 0}
+.msg{display:flex;gap:10px;padding:8px 10px;border-radius:10px}
+.msg:hover{background:var(--panel)}
+.msg img.av{width:40px;height:40px;border-radius:50%;flex:none;background:var(--panel2)}
+.msg .name{font-weight:700}.msg .name small{color:var(--mute);font-weight:400;margin-left:6px}
+.msg .body{white-space:pre-wrap;word-break:break-word}
+.atts img{max-width:260px;max-height:200px;border-radius:8px;margin-top:6px;display:block}
+.atts a{color:var(--cyan)}
+#composer{border-top:1px solid var(--line);padding-top:10px;display:flex;flex-direction:column;gap:8px}
+/* roles / lists */
+.split{display:grid;grid-template-columns:minmax(240px,320px) 1fr;gap:14px;flex:1;min-height:0}
+.list{display:flex;flex-direction:column;gap:6px;overflow-y:auto;min-height:0}
+.item{display:flex;align-items:center;gap:10px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);text-align:left;width:100%}
+.item.sel{border-color:var(--cyan)}
+.item img{width:32px;height:32px;border-radius:50%}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:5px 12px;border-radius:16px;border:1px solid var(--line);background:var(--panel2);font-weight:600}
+.chip.has{border-color:var(--cyan);box-shadow:0 0 8px rgba(25,230,255,.35)}
+.chip:disabled{opacity:.4;cursor:not-allowed}
+/* login */
+.overlay{position:fixed;inset:0;display:grid;place-items:center;background:rgba(7,6,15,.94);z-index:50;padding:16px}
+.modal{width:min(400px,100%);text-align:center;border:1px solid var(--purple);box-shadow:0 0 40px rgba(155,61,255,.4)}
+.modal img{width:96px;height:96px;border-radius:20px;border:2px solid var(--cyan);box-shadow:0 0 24px rgba(25,230,255,.6);object-fit:cover}
+.modal h1{font-size:21px;margin:12px 0 2px}
+.modal form{display:flex;flex-direction:column;gap:10px;margin-top:14px;text-align:left}
+.err{color:var(--red);font-size:14px;min-height:18px}
+#toast{position:fixed;right:16px;bottom:16px;display:flex;flex-direction:column;gap:8px;z-index:99}
+.t{background:var(--panel2);border:1px solid var(--cyan);padding:10px 14px;border-radius:10px;box-shadow:0 0 14px rgba(25,230,255,.3)}
+.t.bad{border-color:var(--red)}
+@media (max-width:720px){.split{grid-template-columns:1fr;overflow:auto}.who{display:none}.brand{font-size:15px}.atts img{max-width:100%}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="login" class="overlay">
+  <div class="card modal">
+    <img src="https://i.postimg.cc/vBhXVpGJ/Gemini-Generated-Image-ujmtu4ujmtu4ujmt-(1).jpg" alt="TANIM ER WIFE logo">
+    <h1 class="brand">TANIM ER WIFE</h1>
+    <div class="sub">TYRONEX PRODUCTION · Admin sign in</div>
+    <form id="loginForm">
+      <input type="email" id="lEmail" placeholder="Admin email" autocomplete="username" required>
+      <input type="password" id="lPass" placeholder="Password" autocomplete="current-password" required>
+      <div class="err" id="lErr" role="alert"></div>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+  </div>
+</div>
+
+<header>
+  <img src="https://i.postimg.cc/vBhXVpGJ/Gemini-Generated-Image-ujmtu4ujmtu4ujmt-(1).jpg" alt="TANIM ER WIFE logo">
+  <div><div class="brand">TANIM ER WIFE</div><div class="sub">TYRONEX PRODUCTION</div></div>
+  <div class="spacer"></div>
+  <div class="who" id="who"></div>
+  <button class="btn" id="logout">Sign out</button>
+</header>
+
+<section class="screen" id="picker">
+  <div class="row"><div class="grow"><h2>Choose a server</h2><div class="tag">Servers where TANIM ER WIFE is a member</div></div><button class="btn" id="refresh">Refresh servers</button></div>
+  <div id="grid"></div>
+</section>
+
+<div id="panel" class="hidden">
+  <div class="sbar"><button class="btn" id="back">All servers</button><div class="gicon" id="sIcon"></div><h2 id="sName"></h2></div>
+  <nav id="tabs">
+    <button data-t="chat" class="active">Live chat</button>
+    <button data-t="roles">Roles</button>
+    <button data-t="voice">Voice</button>
+    <button data-t="admins" id="adminBtn" class="hidden">Admins</button>
+  </nav>
+
+  <section class="tab active" id="tab-chat">
+    <div class="row" style="margin-bottom:8px"><select id="chanSel" class="grow" aria-label="Text channel"></select><button class="btn" id="reload">Reload messages</button></div>
+    <div id="msgs"></div>
+    <form id="composer">
+      <textarea id="msgText" rows="2" maxlength="2000" placeholder="Write a message (Enter to send, Shift+Enter for a new line)"></textarea>
+      <div class="row"><input type="file" id="files" multiple class="grow"><button class="btn primary" type="submit" id="sendBtn">Send message</button></div>
+    </form>
+  </section>
+
+  <section class="tab" id="tab-roles">
+    <div class="split">
+      <div class="card" style="display:flex;flex-direction:column;min-height:0">
+        <div class="row" style="margin-bottom:10px"><input type="text" id="memberQ" class="grow" placeholder="Search members"><button class="btn" id="memberGo">Search</button></div>
+        <div class="list" id="memberList"></div>
+      </div>
+      <div class="card" style="overflow:auto" id="roleBox"><div class="tag">Select a member to assign or remove roles.</div></div>
+    </div>
+  </section>
+
+  <section class="tab" id="tab-voice">
+    <div class="card" style="margin-bottom:14px">
+      <div class="row"><select id="voiceSel" class="grow" aria-label="Voice channel"></select><button class="btn primary" id="vJoin">Join channel</button><button class="btn danger" id="vLeave">Disconnect</button></div>
+      <div class="tag" id="vStatus" style="margin-top:8px">Bot is not in a voice channel.</div>
+    </div>
+    <div class="list" id="vMembers"></div>
+  </section>
+
+  <section class="tab" id="tab-admins">
+    <form id="adminForm" class="card row" style="margin-bottom:14px">
+      <input type="email" id="aEmail" class="grow" placeholder="Sub-admin email" required>
+      <input type="password" id="aPass" class="grow" placeholder="Password (6+ characters)" minlength="6" required>
+      <button class="btn primary" type="submit">Add sub-admin</button>
+    </form>
+    <div class="list" id="adminList"></div>
+  </section>
+</div>
+<div id="toast" aria-live="polite"></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const safeUrl = (u) => (/^https?:\/\//i.test(u || '') ? esc(u) : '');
+const S = { token: sessionStorage.getItem('tk'), me: null, guild: null, chan: null, roles: [], members: [], member: null, ws: null, retry: 0 };
+
+function toast(m, bad) {
+  const d = document.createElement('div'); d.className = 't' + (bad ? ' bad' : ''); d.textContent = m;
+  $('toast').appendChild(d); setTimeout(() => d.remove(), 3800);
+}
+async function api(url, o = {}) {
+  const opt = { method: o.method || 'GET', headers: { Authorization: 'Bearer ' + S.token } };
+  if (o.json) { opt.headers['Content-Type'] = 'application/json'; opt.body = JSON.stringify(o.json); }
+  if (o.form) opt.body = o.form;
+  const r = await fetch(url, opt);
+  const d = await r.json().catch(() => ({}));
+  if (r.status === 401) { logout(true); throw new Error('Session expired. Sign in again.'); }
+  if (!r.ok) throw new Error(d.error || 'Request failed');
+  return d;
+}
+const run = (fn) => async (...a) => { try { await fn(...a); } catch (e) { toast(e.message, true); } };
+
+/* ---------- auth ---------- */
+$('loginForm').onsubmit = async (e) => {
+  e.preventDefault(); $('lErr').textContent = '';
+  try {
+    const r = await fetch('/api/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: $('lEmail').value, password: $('lPass').value }) });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'Sign in failed');
+    S.token = d.token; sessionStorage.setItem('tk', d.token); $('lPass').value = ''; boot();
+  } catch (err) { $('lErr').textContent = err.message; }
+};
+function logout(silent) {
+  if (!silent && S.token) fetch('/api/logout', { method: 'POST', headers: { Authorization: 'Bearer ' + S.token } }).catch(() => {});
+  S.token = null; sessionStorage.removeItem('tk');
+  if (S.ws) { S.ws.onclose = null; S.ws.close(); S.ws = null; }
+  S.guild = null; $('panel').classList.add('hidden'); $('picker').classList.remove('hidden');
+  $('login').classList.remove('hidden');
+}
+$('logout').onclick = () => logout();
+
+async function boot() {
+  try { S.me = await api('/api/me'); } catch { return; }
+  $('login').classList.add('hidden');
+  $('who').textContent = `${S.me.email} · ${S.me.role === 'head' ? 'Head admin' : 'Sub-admin'}`;
+  $('adminBtn').classList.toggle('hidden', S.me.role !== 'head');
+  connectWs(); loadGuilds().catch((e) => toast(e.message, true));
+}
+
+/* ---------- live updates (ws) ---------- */
+function connectWs() {
+  if (!S.token) return;
+  const proto = location.protocol === 'https:' ? 'wss' : 'ws';
+  const ws = new WebSocket(`${proto}://${location.host}/ws?token=${S.token}`);
+  S.ws = ws;
+  ws.onopen = () => { S.retry = 0; };
+  ws.onmessage = (ev) => {
+    let m; try { m = JSON.parse(ev.data); } catch { return; }
+    if (m.type === 'message' && S.guild && m.data.guildId === S.guild.id && m.data.channelId === S.chan) { addMsg(m.data); scrollMsgs(); }
+    if (m.type === 'voice' && S.guild && m.data.guildId === S.guild.id) renderVoice(m.data);
+    if (m.type === 'guilds') loadGuilds().catch(() => {});
+  };
+  ws.onclose = () => { if (S.token) setTimeout(connectWs, Math.min(15000, 1000 * ++S.retry)); };
+}
+
+/* ---------- server grid ---------- */
+async function loadGuilds() {
+  $('grid').innerHTML = '<div class="empty">Loading servers…</div>';
+  const list = await api('/api/guilds');
+  S.guilds = list;
+  $('grid').innerHTML = list.map((g) => `<button class="gcard" data-id="${esc(g.id)}"><div class="gicon" style="${g.icon ? `background-image:url('${safeUrl(g.icon)}')` : ''}">${g.icon ? '' : esc(g.name.split(/\s+/).map((w) => w[0]).join('').slice(0, 3))}</div><div class="gname">${esc(g.name)}</div></button>`).join('')
+    || '<div class="empty">The bot isn’t in any server yet. Invite it from the Discord Developer Portal, then choose Refresh servers.</div>';
+  $('grid').querySelectorAll('.gcard').forEach((b) => b.onclick = run(() => openGuild(S.guilds.find((g) => g.id === b.dataset.id))));
+}
+$('refresh').onclick = run(async () => { await loadGuilds(); toast('Servers refreshed'); });
+$('back').onclick = () => { S.guild = null; $('panel').classList.add('hidden'); $('picker').classList.remove('hidden'); };
+
+async function openGuild(g) {
+  S.guild = g; S.chan = null; S.member = null;
+  $('picker').classList.add('hidden'); $('panel').classList.remove('hidden');
+  $('sName').textContent = g.name;
+  $('sIcon').style.backgroundImage = g.icon ? `url('${safeUrl(g.icon)}')` : '';
+  $('sIcon').textContent = g.icon ? '' : g.name.slice(0, 2);
+  $('msgs').innerHTML = '<div class="empty">Loading…</div>';
+  const ch = await api(`/api/guilds/${g.id}/channels`);
+  $('chanSel').innerHTML = ch.text.map((c) => `<option value="${c.id}">#${esc(c.name)}</option>`).join('') || '<option value="">No text channels</option>';
+  $('voiceSel').innerHTML = ch.voice.map((c) => `<option value="${c.id}">${esc(c.name)}</option>`).join('') || '<option value="">No voice channels</option>';
+  const results = await Promise.allSettled([loadMsgs(), loadRoles(), loadVoice()]);
+  results.filter((r) => r.status === 'rejected').forEach((r) => toast(r.reason.message, true));
+}
+
+/* ---------- tabs ---------- */
+$('tabs').onclick = (e) => {
+  const t = e.target.closest('button'); if (!t) return;
+  document.querySelectorAll('#tabs button').forEach((b) => b.classList.toggle('active', b === t));
+  document.querySelectorAll('.tab').forEach((x) => x.classList.toggle('active', x.id === 'tab-' + t.dataset.t));
+  if (t.dataset.t === 'admins') loadAdmins().catch((er) => toast(er.message, true));
+};
+
+/* ---------- live chat ---------- */
+$('chanSel').onchange = run(loadMsgs);
+$('reload').onclick = run(loadMsgs);
+function scrollMsgs() { const m = $('msgs'); m.scrollTop = m.scrollHeight; }
+function addMsg(m) {
+  const box = $('msgs'); box.querySelector('.empty')?.remove();
+  if (document.getElementById('m-' + m.id)) return;
+  const d = document.createElement('div'); d.className = 'msg'; d.id = 'm-' + m.id;
+  const atts = m.attachments.map((a) => a.type.startsWith('image/')
+    ? `<a href="${safeUrl(a.url)}" target="_blank" rel="noopener"><img src="${safeUrl(a.url)}" alt="${esc(a.name)}"></a>`
+    : `<div><a href="${safeUrl(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a></div>`).join('');
+  d.innerHTML = `<img class="av" src="${safeUrl(m.author.avatar)}" alt="">
+    <div style="min-width:0"><div class="name" style="${m.author.color ? 'color:' + esc(m.author.color) : ''}">${esc(m.author.name)}${m.author.bot ? '<small>bot</small>' : ''}<small>${new Date(m.createdAt).toLocaleString()}</small></div>
+    <div class="body">${esc(m.content)}</div><div class="atts">${atts}</div></div>`;
+  box.appendChild(d);
+}
+async function loadMsgs() {
+  if (!S.guild) return;
+  S.chan = $('chanSel').value; const box = $('msgs');
+  if (!S.chan) { box.innerHTML = '<div class="empty">No text channels are visible to the bot in this server.</div>'; return; }
+  box.innerHTML = '<div class="empty">Loading messages…</div>';
+  const list = await api(`/api/guilds/${S.guild.id}/channels/${S.chan}/messages`);
+  box.innerHTML = list.length ? '' : '<div class="empty">No messages yet. Send the first one below.</div>';
+  list.forEach(addMsg); scrollMsgs();
+}
+$('composer').onsubmit = run(async (e) => {
+  e.preventDefault();
+  if (!S.guild || !S.chan) throw new Error('Choose a channel first');
+  const fd = new FormData(); fd.append('content', $('msgText').value);
+  [...$('files').files].forEach((f) => fd.append('files', f));
+  $('sendBtn').disabled = true;
+  try { await api(`/api/guilds/${S.guild.id}/channels/${S.chan}/messages`, { method: 'POST', form: fd }); }
+  finally { $('sendBtn').disabled = false; }
+  $('msgText').value = ''; $('files').value = '';
+});
+$('msgText').onkeydown = (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); $('composer').requestSubmit(); } };
+
+/* ---------- roles ---------- */
+async function loadRoles() {
+  S.roles = await api(`/api/guilds/${S.guild.id}/roles`);
+  await loadMembers();
+}
+async function loadMembers() {
+  const q = $('memberQ').value.trim();
+  S.members = await api(`/api/guilds/${S.guild.id}/members${q ? '?q=' + encodeURIComponent(q) : ''}`);
+  $('memberList').innerHTML = S.members.map((m) => `<button class="item ${S.member?.id === m.id ? 'sel' : ''}" data-u="${esc(m.id)}"><img src="${safeUrl(m.avatar)}" alt=""><span>${esc(m.name)}<div class="tag">@${esc(m.username)}</div></span></button>`).join('') || '<div class="tag">No members found.</div>';
+  $('memberList').querySelectorAll('.item').forEach((b) => b.onclick = () => { S.member = S.members.find((m) => m.id === b.dataset.u); loadMembers().catch(() => {}); renderRoles(); });
+}
+$('memberGo').onclick = run(loadMembers);
+$('memberQ').onkeydown = (e) => { if (e.key === 'Enter') $('memberGo').click(); };
+function renderRoles() {
+  if (!S.member) return;
+  $('roleBox').innerHTML = `<h3 style="margin:0 0 4px">${esc(S.member.name)}’s roles</h3><div class="tag" style="margin-bottom:10px">Select a role to assign it. Select it again to remove it.</div><div class="chips">${S.roles.map((r) => `<button class="chip ${S.member.roles.includes(r.id) ? 'has' : ''}" data-r="${esc(r.id)}" style="${r.color !== '#000000' ? 'border-left:4px solid ' + esc(r.color) : ''}" ${r.assignable ? '' : 'disabled title="The bot can’t manage this role"'}>${esc(r.name)}</button>`).join('')}</div>`;
+  $('roleBox').querySelectorAll('.chip').forEach((c) => c.onclick = run(async () => {
+    const has = S.member.roles.includes(c.dataset.r);
+    const r = await api(`/api/guilds/${S.guild.id}/members/${S.member.id}/roles/${c.dataset.r}`, { method: has ? 'DELETE' : 'POST' });
+    S.member.roles = has ? S.member.roles.filter((x) => x !== c.dataset.r) : [...S.member.roles, c.dataset.r];
+    toast(r.message); renderRoles();
+  }));
+}
+
+/* ---------- voice ---------- */
+async function loadVoice() { renderVoice(await api(`/api/guilds/${S.guild.id}/voice`)); }
+function renderVoice(v) {
+  $('vStatus').textContent = v.connected ? `Connected to ${v.channelName}` : 'Bot is not in a voice channel.';
+  $('vMembers').innerHTML = v.members.map((m) => `<div class="item"><img src="${safeUrl(m.avatar)}" alt=""><span style="flex:1">${esc(m.name)}${m.bot ? ' <span class="tag">bot</span>' : ''}</span><span class="tag">${m.muted ? 'muted ' : ''}${m.deafened ? 'deafened' : ''}</span></div>`).join('')
+    || '<div class="empty">No one is in the channel the bot joined.</div>';
+}
+$('vJoin').onclick = run(async () => {
+  if (!$('voiceSel').value) throw new Error('Choose a voice channel');
+  $('vJoin').disabled = true;
+  try { renderVoice(await api(`/api/guilds/${S.guild.id}/voice/join`, { method: 'POST', json: { channelId: $('voiceSel').value } })); }
+  finally { $('vJoin').disabled = false; }
+  toast('Joined voice channel');
+});
+$('vLeave').onclick = run(async () => { renderVoice(await api(`/api/guilds/${S.guild.id}/voice/leave`, { method: 'POST' })); toast('Disconnected from voice'); });
+
+/* ---------- admins ---------- */
+async function loadAdmins() {
+  const list = await api('/api/admins');
+  $('adminList').innerHTML = list.map((a) => `<div class="item"><span style="flex:1">${esc(a.email)}<div class="tag">Added ${new Date(a.createdAt).toLocaleDateString()}</div></span><button class="btn danger" data-e="${esc(a.email)}">Delete</button></div>`).join('')
+    || '<div class="empty">No sub-admins yet. Add one above.</div>';
+  $('adminList').querySelectorAll('button').forEach((b) => b.onclick = run(async () => {
+    if (!confirm('Delete ' + b.dataset.e + '?')) return;
+    await api('/api/admins/' + encodeURIComponent(b.dataset.e), { method: 'DELETE' }); toast('Sub-admin deleted'); loadAdmins();
+  }));
+}
+$('adminForm').onsubmit = run(async (e) => {
+  e.preventDefault();
+  await api('/api/admins', { method: 'POST', json: { email: $('aEmail').value, password: $('aPass').value } });
+  $('aEmail').value = ''; $('aPass').value = ''; toast('Sub-admin added'); loadAdmins();
+});
+
+if (S.token) boot(); else $('login').classList.remove('hidden');
+</script>
+</body>
+</html>
